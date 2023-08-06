@@ -1,0 +1,12 @@
+@use "sass:map";
+
+/* Custom Class-less version for Gatsby */
+@use "../node_modules/@picocss/pico/scss/pico" with (
+  $semantic-root-element: "#gatsby-focus-wrapper",
+  $enable-semantic-container: true,
+  $enable-classes: false,
+);
+
+.deckgo-highlight-code-carbon > code {
+  display: none !important;
+}

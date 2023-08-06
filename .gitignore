@@ -7,3 +7,7 @@ vendor
 .vscode/
 *.csv
 .prettierrc
+.idea/
+node_modules/
+.cache/
+public

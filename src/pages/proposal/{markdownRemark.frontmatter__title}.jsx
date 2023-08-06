@@ -1,0 +1,41 @@
+import * as React from "react"
+import {graphql} from "gatsby"
+import Layout from "../../components/Layout";
+
+export default function BlogPostTemplate({data}) {
+    const {markdownRemark} = data
+    const {frontmatter, html} = markdownRemark
+    return (
+        <Layout>
+            <main>
+                <article>
+                    <header>
+                        <hgroup>
+                            <h1>{frontmatter.title}</h1>
+                            <h2>{frontmatter.date}</h2>
+                        </hgroup>
+                    </header>
+                    <div
+                        dangerouslySetInnerHTML={{__html: html}}
+                    />
+                </article>
+            </main>
+        </Layout>
+    )
+}
+export const Head = () => (
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css"
+    />
+)
+export const pageQuery = graphql`
+  query($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      html
+      frontmatter {
+        title
+      }
+    }
+  }
+`

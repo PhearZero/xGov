@@ -1,0 +1,32 @@
+{
+  "name": "@algofoundation/x-gov-ui",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ello, govna",
+  "author": "Michael J Feher",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@deckdeckgo/highlight-code": "^3.6.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@picocss/pico": "^2.0.0-alpha1",
+    "gatsby": "^5.11.0",
+    "gatsby-plugin-emotion": "^8.11.0",
+    "gatsby-plugin-sass": "^6.11.0",
+    "gatsby-remark-highlight-code": "^3.3.0",
+    "gatsby-source-filesystem": "^5.11.0",
+    "gatsby-transformer-remark": "^6.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.64.2"
+  }
+}
