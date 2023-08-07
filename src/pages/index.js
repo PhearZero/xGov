@@ -15,7 +15,7 @@ const IndexPage = ({data}) => {
                 {pages.map(page => (
                     <article key={page.path}>
                         <header>
-                            <Link href={page.path}>{page.frontmatter.title}</Link>
+                            <Link to={page.path}>{page.frontmatter.title}</Link>
                         </header>
                         {page.excerpt}
                         <footer>

@@ -7,14 +7,14 @@ export default function Layout({children, title="xGov", subtitle="Governance", p
         <>
             <header>
                 <hgroup>
-                    <h1><Link href='/'>{title}</Link></h1>
+                    <h1><Link to='/'>{title}</Link></h1>
                 <h2>{subtitle}</h2>
                 </hgroup>
                 {}
             </header>
             {children}
             <footer>
-                Built with <Link href="https://v2.picocss.com/docs">PicoCSS</Link>
+                Built with <a href="https://v2.picocss.com/docs">PicoCSS</a>
             </footer>
         </>
     )
