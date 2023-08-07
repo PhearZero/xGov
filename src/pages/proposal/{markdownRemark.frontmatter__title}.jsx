@@ -32,10 +32,6 @@ export const Head = ({data}) => {
             <html lang="en" />
             <title>xGov | {frontmatter.title}</title>
             <meta name="description" content={excerpt.replace('Abstract ', '')} />
-            <link
-                rel="stylesheet"
-                href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css"
-            />
         </>
     )
 }
