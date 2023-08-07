@@ -17,7 +17,7 @@ const IndexPage = ({data}) => {
                         <header>
                             <Link to={page.path}>{page.frontmatter.title}</Link>
                         </header>
-                        {page.excerpt}
+                        {page.excerpt.replace('Abstract ', '')}
                         <footer>
                             {page.frontmatter.author}
                         </footer>
@@ -33,6 +33,8 @@ export default IndexPage
 
 export const Head = () => (
     <>
+        <html lang="en" />
+        <meta name="description" content="Algorand xGov Portal" />
         <title>xGov Voting</title>
     </>
 )

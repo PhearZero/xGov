@@ -23,16 +23,27 @@ export default function BlogPostTemplate({data}) {
         </Layout>
     )
 }
-export const Head = () => (
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css"
-    />
-)
+export const Head = ({data}) => {
+    const {markdownRemark} = data
+    const {frontmatter, excerpt} = markdownRemark
+    console.log(data)
+    return (
+        <>
+            <html lang="en" />
+            <title>xGov | {frontmatter.title}</title>
+            <meta name="description" content={excerpt.replace('Abstract ', '')} />
+            <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css"
+            />
+        </>
+    )
+}
 export const pageQuery = graphql`
   query($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
+      excerpt
       frontmatter {
         title
       }
