@@ -1,24 +1,21 @@
 import * as React from "react"
-import {PROVIDER_ID, useInitializeProviders, WalletProvider} from '@txnlab/use-wallet'
-// import {DeflyWalletConnect} from '@blockshake/defly-connect'
-import {PeraWalletConnect} from '@perawallet/connect'
-// import {DaffiWalletConnect} from '@daffiwallet/connect'
-import {defineCustomElements as deckDeckGoHighlightElement} from "@deckdeckgo/highlight-code/dist/loader";
 import {Link} from "gatsby";
 import ConnectMenu from "./ConnectMenu";
-
+import {defineCustomElements as deckDeckGoHighlightElement} from "@deckdeckgo/highlight-code/dist/loader";
+import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
+import {ReactElement} from "react";
 deckDeckGoHighlightElement();
-export default function Layout({children, title = "xGov", subtitle = "Governance"}) {
-    const providers = useInitializeProviders({
-        providers: [
-            // {id: PROVIDER_ID.DEFLY, clientStatic: DeflyWalletConnect},
-            {id: PROVIDER_ID.PERA, clientStatic: PeraWalletConnect},
-            // {id: PROVIDER_ID.DAFFI, clientStatic: DaffiWalletConnect},
-        ]
-    })
+
+type LayoutProps = {
+    children: React.ReactNode,
+    title?: string,
+    subtitle?: string,
+}
+export default function Layout({children, title = "xGov", subtitle = "Governance"}: LayoutProps):  ReactElement | null {
+
     const [open, setOpen] = React.useState(false)
     return (
-        <WalletProvider value={providers}>
+        <>
             <header style={{padding: 0,}}>
                 <nav>
                     <ul style={{display: "flex", width: "100%"}}>
@@ -31,7 +28,8 @@ export default function Layout({children, title = "xGov", subtitle = "Governance
                         </li>
                         <li style={{flex: 1}}></li>
                         <li>
-                            <button onClick={()=>setOpen(!open)} aria-label="Connect Wallet Menu" style={{position: "relative", zIndex: 1000}}>
+                            <button onClick={() => setOpen(!open)} aria-label="Connect Wallet Menu"
+                                    style={{position: "relative", zIndex: 1000}}>
                                 <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg"
                                      viewBox="0 0 24 24" height="16px" fill="none" stroke="currentColor"
                                      strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -49,6 +47,7 @@ export default function Layout({children, title = "xGov", subtitle = "Governance
             <footer>
                 Built with <a href="https://v2.picocss.com/docs">PicoCSS</a>
             </footer>
-        </WalletProvider>
+            <ReactQueryDevtools/>
+        </>
     )
 }

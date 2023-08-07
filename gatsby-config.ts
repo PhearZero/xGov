@@ -1,7 +1,9 @@
+import type {GatsbyConfig} from "gatsby";
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-module.exports = {
+const config: GatsbyConfig = {
     siteMetadata: {
         title: `xGov`,
         siteUrl: `https://xgov.algorand.foundation`
@@ -41,3 +43,5 @@ module.exports = {
         `gatsby-plugin-offline`,
     ]
 };
+
+export default config;

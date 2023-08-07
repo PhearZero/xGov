@@ -1,10 +1,15 @@
 import * as React from "react"
 import {graphql} from "gatsby"
 import Layout from "../../components/Layout";
+import useGovs from "../../hooks/useGovs";
+import useProposals from "../../hooks/useProposals";
 
 export default function BlogPostTemplate({data}) {
     const {markdownRemark} = data
     const {frontmatter, html} = markdownRemark
+    const govs = useGovs()
+    const proposals = useProposals()
+    console.log({govs: govs.data, proposals: proposals.data})
     return (
         <Layout>
             <main>
