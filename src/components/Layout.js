@@ -2,7 +2,7 @@ import * as React from "react"
 import {PROVIDER_ID, useInitializeProviders, WalletProvider} from '@txnlab/use-wallet'
 // import {DeflyWalletConnect} from '@blockshake/defly-connect'
 import {PeraWalletConnect} from '@perawallet/connect'
-import {DaffiWalletConnect} from '@daffiwallet/connect'
+// import {DaffiWalletConnect} from '@daffiwallet/connect'
 import {defineCustomElements as deckDeckGoHighlightElement} from "@deckdeckgo/highlight-code/dist/loader";
 import {Link} from "gatsby";
 import ConnectMenu from "./ConnectMenu";
@@ -13,7 +13,7 @@ export default function Layout({children, title = "xGov", subtitle = "Governance
         providers: [
             // {id: PROVIDER_ID.DEFLY, clientStatic: DeflyWalletConnect},
             {id: PROVIDER_ID.PERA, clientStatic: PeraWalletConnect},
-            {id: PROVIDER_ID.DAFFI, clientStatic: DaffiWalletConnect},
+            // {id: PROVIDER_ID.DAFFI, clientStatic: DaffiWalletConnect},
         ]
     })
     const [open, setOpen] = React.useState(false)
