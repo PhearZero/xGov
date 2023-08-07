@@ -7,6 +7,7 @@ module.exports = {
         siteUrl: `https://xgov.algorand.foundation`
     },
     plugins: [
+        // "gatsby-plugin-webpack-bundle-analyser-v2",
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
